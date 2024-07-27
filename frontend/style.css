@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(./assets/bg-desktop.png) no-repeat top center/cover;
+    height: 100vh;
+}
+
+body *  {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 500px;
+    border-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-form h2{
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.styled-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 10px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff007b, #6200ff);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s; box-shadow: 0.3s;
+    text-transform: uppercase;
+}
+
+.styled-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.styled-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.styled-button .icon-lock {
+    margin-left: 10px;
+}
