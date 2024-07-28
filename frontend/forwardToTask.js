@@ -20,3 +20,12 @@ document.querySelectorAll('.link').forEach(link => {
         }, 1000);
     });
 });
+
+// Função para ocultar o spinner e exibir o conteúdo após 3s
+function hideSpinnerAndShowContent() {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('content').classList.remove('hidden');
+}
+
+// Espera 3 segundos antes de ocultar o spinner e mostrar o conteúdo
+setTimeout(hideSpinnerAndShowContent, 3000);
