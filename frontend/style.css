@@ -10,15 +10,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #ea9078, #7ece98, #bcf2fa, #fbd3dc);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: linear-gradient(45deg, #ea9078, #7ece98, #fbd3dc, #bcf2fa);
 }
 
 body * {
@@ -30,7 +22,7 @@ body * {
 }
 
 .login-form {
-    background: linear-gradient(45deg, #ea9078, #7ece98, #bcf2fa, #fbd3dc);
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 30px;
     border: 1px solid black;
