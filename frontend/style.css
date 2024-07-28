@@ -90,3 +90,23 @@ body * {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+.spinner {
+    width: 50px;
+    aspect-ratio: 1;
+    --_c1: radial-gradient(farthest-side, #ea9078 92%, #0000);
+    --_c2: radial-gradient(farthest-side, #7ece98 92%, #0000);
+    --_c3: radial-gradient(farthest-side, #bcf2fa 92%, #0000);
+    --_c4: radial-gradient(farthest-side, #fbd3dc 92%, #0000);
+    background: 
+      var(--_c1) top left,
+      var(--_c2) top right,
+      var(--_c3) bottom right,
+      var(--_c4) bottom left;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    animation: spin 1.5s infinite;
+  }
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
