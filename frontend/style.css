@@ -8,8 +8,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(./assets/bg-desktop.png) center/cover no-repeat;
     height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #ea9078, #7ece98, #bcf2fa, #fbd3dc);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 body * {
@@ -104,7 +113,7 @@ body * {
       var(--_c4) bottom left;
     background-size: 15px 15px;
     background-repeat: no-repeat;
-    animation: spin 1.5s infinite;
+    animation: spin 1.5s infinite;    
   }
   @keyframes spin {
     100% { transform: rotate(360deg); }
