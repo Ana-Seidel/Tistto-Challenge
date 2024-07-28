@@ -126,3 +126,29 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+#loading {
+    display: block;
+}
+
+.container {
+    display: none;
+}
+
+.container.hidden {
+    display: block;
+}
+
+/* Lista de tarefas */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#taskList li {
+    cursor: pointer;
+}
+
+#taskList li.done {
+    text-decoration: line-through;
+}
