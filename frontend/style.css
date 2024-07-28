@@ -21,6 +21,7 @@ body * {
     color: black;
 }
 
+/* Design usado na caixa do login*/
 .login-form {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
@@ -59,6 +60,7 @@ body * {
     outline: none;
 }
 
+/* Design usado no botão criar*/
 .styled-button {
     display: flex;
     align-items: center;
@@ -91,6 +93,7 @@ body * {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Design usado no spinner*/
 .spinner {
     width: 50px;
     aspect-ratio: 1;
