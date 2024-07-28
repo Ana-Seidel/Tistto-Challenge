@@ -1,16 +1,11 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body {
+/* Design página criar login*/
+body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #ea9078, #7ece98, #fbd3dc, #bcf2fa);
+    background: linear-gradient(45deg, #bcf2fa, #fbd3dc, #7ece98, #ea9078);
 }
 
 body * {
@@ -21,8 +16,7 @@ body * {
     color: black;
 }
 
-/* Design usado na caixa do login*/
-.login-form {
+.login-criar {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 30px;
@@ -36,16 +30,16 @@ body * {
     transform: translate(-50%, -50%);
 }
 
-.login-form h2 {
+.login-criar h2{
     margin-bottom: 20px;
 }
 
-.login-form label {
+.login-criar label {
     display: block;
     margin: 10px 0 5px;
 }
 
-.login-form input {
+.login-criar input {
     display: block;
     width: calc(100% - 22px);
     margin: 0 auto 10px auto;
@@ -54,7 +48,7 @@ body * {
     border-radius: 5px;
 }
 
-.login-form input:focus {
+.login-criar input:focus {
     border-color: #000000;
     box-shadow: 0 0 5px rgba(208, 221, 131, 0.171);
     outline: none;
@@ -92,27 +86,6 @@ body * {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-
-/* Design usado no spinner*/
-.spinner {
-    width: 50px;
-    aspect-ratio: 1;
-    --_c1: radial-gradient(farthest-side, #ea9078 92%, #0000);
-    --_c2: radial-gradient(farthest-side, #7ece98 92%, #0000);
-    --_c3: radial-gradient(farthest-side, #bcf2fa 92%, #0000);
-    --_c4: radial-gradient(farthest-side, #fbd3dc 92%, #0000);
-    background: 
-      var(--_c1) top left,
-      var(--_c2) top right,
-      var(--_c3) bottom right,
-      var(--_c4) bottom left;
-    background-size: 15px 15px;
-    background-repeat: no-repeat;
-    animation: spin 1.5s infinite;    
-  }
-  @keyframes spin {
-    100% { transform: rotate(360deg); }
-  }
 
 /* CSS do rodapé*/
 footer {
