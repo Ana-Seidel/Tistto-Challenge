@@ -75,7 +75,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    margin: 0 auto;
+    margin-left: 125px;
 }
 
 /* Botão para adicionar as tarefas*/
@@ -96,22 +96,24 @@ body {
     opacity: 0.6;
 }
 
-#tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style-type: none;
-    padding: 0;
+/* Tamanho dos icones*/
+img {
+    height: 28px;
 }
 
-/* Barra das tarefas*/
-#tasks li {
-    font-size: 15px;
-    text-transform: capitalize;
+.list-task {
+    width: 100%;
+    list-style: none;
+}
+
+.task {
     background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     display: flex;
+    height: 48px;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-right: 80px;
 }
