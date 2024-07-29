@@ -37,6 +37,20 @@ body {
     flex-direction: column;
 }
 
+.containerBody {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -61,7 +75,6 @@ body {
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    text-transform: uppercase;
     margin: 0 auto;
 }
 
@@ -78,6 +91,10 @@ body {
     transition: .4s;
 }
 
+#add-taks :hover {
+    opacity: 0.6;
+}
+
 #tasks {
     display: flex;
     flex-direction: column;
@@ -86,6 +103,7 @@ body {
     padding: 0;
 }
 
+/* Barra das tarefas*/
 #tasks li {
     font-size: 15px;
     text-transform: capitalize;
