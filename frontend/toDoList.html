@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>toDoList</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="forwardToTask.js"></script>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="toDoList.css">
 </head>
 <body>
-    <div class="spinner" id="spinner"></div>
-    <div id="loading">
-        <label for="Carregando">Carregando</label>
-      </div>
-    <div class="container">
-        <h1>Lista de tarefas</h1>
-        <input type="text" id="taskInput" placeholder="Digite uma tarefa">
-        <button id="addButton">Adicionar Tarefa</button>
+    <div id="spinner" class="spinner">Carregando...</div>
+    <div id="content" class="hidden">
+        <form>
+            <input type="text" id="taskInput" placeholder="Adicione uma tarefa">
+            <button type="button" id="addButton" class="styled-button">Adicionar</button>
+        </form>
         <ul id="taskList"></ul>
     </div>
+
+    <script src="./forwardToTask.js"></script>
 </body>
-</html> 
+</html>

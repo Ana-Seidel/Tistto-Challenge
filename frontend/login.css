@@ -131,11 +131,11 @@ footer a:hover {
     display: block;
 }
 
-.container {
+.container.hidden {
     display: none;
 }
 
-.container.hidden {
+.container {
     display: block;
 }
 
