@@ -1,3 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 /* Design usado no spinner
 .spinner {
     width: 50px;
@@ -34,7 +40,6 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    flex-direction: column;
 }
 
 .containerBody {
@@ -55,12 +60,17 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 20px;
 }
 
 .button {
     display: flex;
     gap: 16px;
     align-items: center;
+}
+
+h1 {
+    margin-bottom: 18px;
 }
 
 #taskbar {
@@ -75,7 +85,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    margin-left: 125px;
+    margin-left: 22%;
 }
 
 /* Botão para adicionar as tarefas*/
@@ -115,5 +125,5 @@ img {
     justify-content: space-between;
     padding: 0 15px;
     border-radius: 5px;
-    margin-right: 80px;
+    margin-bottom: 10px;
 }
