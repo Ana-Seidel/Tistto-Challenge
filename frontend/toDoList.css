@@ -72,14 +72,15 @@ body {
     color: black;
     background-color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     margin: 0 auto;
 }
 
+/* Botão para adicionar as tarefas*/
 #add-task {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: white;
     border-color: rgba(1, 190, 86, 0.651);
     border-radius: 50%;
     width: 50px;
@@ -91,7 +92,7 @@ body {
     transition: .4s;
 }
 
-#add-taks :hover {
+#add-task:hover {
     opacity: 0.6;
 }
 
@@ -109,7 +110,7 @@ body {
     text-transform: capitalize;
     background-color: white;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
