@@ -109,8 +109,14 @@ h1 {
 /* Tamanho dos icones*/
 img {
     height: 28px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
-
+/*Efeito ao passar mouse em cima da barra de tarefas*/
+.task:hover img {
+    opacity: 1;
+}
+/*Efeito ao passar mouse em cima da barra de tarefas*/
 .list-task {
     width: 100%;
     list-style: none;
@@ -125,5 +131,5 @@ img {
     justify-content: space-between;
     padding: 0 15px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
