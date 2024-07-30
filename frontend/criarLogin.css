@@ -11,7 +11,7 @@ body{
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #bcf2fa, #fbd3dc, #7ece98, #ea9078);
+    background: linear-gradient(45deg, #FFC857, #C05C5C, #1C5D99, #3D9970);
 }
 
 body * {

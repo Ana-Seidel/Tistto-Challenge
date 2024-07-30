@@ -34,7 +34,7 @@ body * {
 }
 
 body {
-    background: linear-gradient(45deg, #ea9078, #7ece98, #fbd3dc, #bcf2fa);
+    background: linear-gradient(45deg, #3D9970, #1C5D99, #C05C5C, #FFC857);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,4 +132,24 @@ img {
     padding: 0 15px;
     border-radius: 5px;
     margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.done {
+    background: linear-gradient(45deg, #ea9078, #7ece98, #fbd3dc, #bcf2fa);
+    text-decoration: line-through;
+    animation: draw-line 3s forwards;
+    animation: fill-color 3s forwards;
+    white-space: nowrap;
+}
+
+@keyframes fill-color {
+    from {
+        background-size: 200% 100%;
+        background-position: 100% 0;
+    }
+    to {
+        background-size: 200% 100%;
+        background-position: 0 0;
+    }
 }
