@@ -1,7 +1,7 @@
 // Função para o botão "Criar" funcionar
 function handleFormSubmit(event) {
     event.preventDefault();
-    window.location.href = 'file:///C:/Users/anaaf/Desktop/Portfólio/Tistto%20Challenge/frontend/toDoList.html';
+    window.location.href = 'https://todolistseidel.netlify.app/';
 }
 
 // Associa o evento de submit ao formulário
