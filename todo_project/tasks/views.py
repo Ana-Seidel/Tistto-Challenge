@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework.views import APIView
 
-# Create your views here.
+
+class UserRegister(APIView):
+    def post(self, request):
+        email = request['email']
+        name = request['name']
+        last_name = request['lastName']
+        password = request['password']
+        
