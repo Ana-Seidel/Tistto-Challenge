@@ -7,4 +7,4 @@ class UserRegister(APIView):
         name = request['name']
         last_name = request['lastName']
         password = request['password']
-        
+
