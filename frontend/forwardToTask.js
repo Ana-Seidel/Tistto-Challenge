@@ -9,6 +9,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     const sobrenome = document.getElementById('sobrenome').value;
     const password = document.getElementById('password').value;
 
+    
     try {
         // Faz uma requisição HTTP POST para o endpoint de registro no backend
         const response = await fetch('http://localhost:8000/api/register/', {
