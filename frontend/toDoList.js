@@ -1,21 +1,23 @@
 const button = document.querySelector("#add-task")
 const input = document.querySelector("#taskbar")
 const allList = document.querySelector(".list-task")
+const logoutButton = document.querySelector("#logout-button")
 
 let itensNaLista = []
 
-
+// Função para adicionar tarefas
 function addTarefa() {
     itensNaLista.push({
         tarefa: input.value,
         concluida: false
     })
-    
-    mostrarTarefa()
+
     //Limpa a taskbar
+    mostrarTarefa()
     input.value = ""
 }
 
+// Função para mostrar tarefas
 function mostrarTarefa(){
     let novaLi = ""
 
@@ -34,12 +36,14 @@ function mostrarTarefa(){
 
 }
 
+// Função para marcar a tarefa como concluída
 function checkTask(index){
     itensNaLista[index].concluida = !itensNaLista[index].concluida
 
     mostrarTarefa()
 }
 
+// Função para deletar tarefa
 function deleteItem(index){
 
     itensNaLista.splice(index, 1)
@@ -48,6 +52,7 @@ function deleteItem(index){
 
 }
 
+// Função para editar tarefa
 function editItem(index) {
     // Preenche o campo de entrada com o texto atual da tarefa
     input.value = itensNaLista[index].tarefa;
@@ -57,5 +62,13 @@ function editItem(index) {
     mostrarTarefa();
 }
 
-// Quando clica no botão para criar
-button.addEventListener("click", addTarefa)
+function logout() {
+
+    
+    localStorage.removeItem('userSession');
+    sessionStorage.removeItem('userSession');
+    window.location.href = 'https://loginseidel.netlify.app/';
+}
+
+button.addEventListener("click", addTarefa) // Botão criar tarefa
+logoutButton.addEventListener("click", logout); // Botão logout
