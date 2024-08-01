@@ -24,6 +24,7 @@ function mostrarTarefa(){
         <li class="task ${item.concluida && "done"}">
             <img src="./assets/check-circle.png" onclick="checkTask(${index})">
             <p>${item.tarefa}</p>
+            <img src="./assets/pencil.png" onclick="editItem(${index})">
             <img src="./assets/trash3-fill.png" onclick="deleteItem(${index})">
         </li>
         `
@@ -45,6 +46,15 @@ function deleteItem(index){
 
     mostrarTarefa()
 
+}
+
+function editItem(index) {
+    // Preenche o campo de entrada com o texto atual da tarefa
+    input.value = itensNaLista[index].tarefa;
+
+    // Remove a tarefa atual da lista (para substituí-la após edição)
+    itensNaLista.splice(index, 1);
+    mostrarTarefa();
 }
 
 // Quando clica no botão para criar

@@ -135,6 +135,22 @@ img {
     cursor: pointer;
 }
 
+/* Direciona o botão check pra esquerda, e o editar/excluir pra direita */
+.task img:first-child {
+    margin-right: auto; /* Check se posicionar à esquerda */
+}
+
+/* Centralizar o texto da tarefa */
+.task p {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.task img {
+    margin: 0 8px; /* Espaçamento entre os de deletar e editar ícones */
+}
+
 .done {
     background: linear-gradient(45deg, #ea9078, #7ece98, #fbd3dc, #bcf2fa);
     text-decoration: line-through;
