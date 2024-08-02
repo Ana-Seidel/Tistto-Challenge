@@ -2,19 +2,39 @@ const button = document.querySelector("#add-task")
 const input = document.querySelector("#taskbar")
 const allList = document.querySelector(".list-task")
 const logoutButton = document.querySelector("#logout-button")
+const API_URL = 'http://localhost:8000/api'
 
 let itensNaLista = []
 
 // Função para adicionar tarefas
-function addTarefa() {
-    itensNaLista.push({
-        tarefa: input.value,
-        concluida: false
-    })
+async function addTarefa() {
+    const tarefa = input.value;
+    const username = JSON.parse(localStorage.getItem('username')); // Obter o username do localStorage
+    console.log("username",username)
 
-    //Limpa a taskbar
-    mostrarTarefa()
-    input.value = ""
+    try {
+        const response = await fetch(`${API_URL}/tasks/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ tarefa, username }) // Enviar o username com a tarefa
+        });
+
+        //if (response.ok) {
+            itensNaLista.push({
+                tarefa: input.value,
+                concluida: false
+            });
+
+            input.value = "";
+            mostrarTarefa();
+        //} else {
+            alert('Erro ao adicionar tarefa.');
+    //    }
+    } catch (error) {
+        alert('Erro de conexão.');
+    }
 }
 
 // Função para mostrar tarefas
@@ -72,24 +92,3 @@ function logout() {
 
 button.addEventListener("click", addTarefa) // Botão criar tarefa
 logoutButton.addEventListener("click", logout); // Botão logout
-
-// Adicionar tarefa
-document.getElementById('add-task').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const description = document.getElementById('taskbar').value;
-
-    const response = await fetch(`${API_URL}/tasks/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({description })
-    });
-
-    if (response.ok) {
-        document.getElementById('add-task').reset();
-        loadTasks();
-    } else {
-        alert('Erro ao adicionar tarefa.');
-    }
-});

@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Login bem succedido:', data);
+                localStorage.setItem('username', JSON.stringify(email));
                 window.location.href = 'http://127.0.0.1:5500/toDoList.html';
             } else {
                 console.error('Login falhou:', response.statusText);

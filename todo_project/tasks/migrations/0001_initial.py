@@ -19,7 +19,16 @@ class Migration(migrations.Migration):
                 ('nome', models.CharField(max_length=255)),
                 ('sobrenome', models.CharField(max_length=255)),
                 ('password', models.CharField(max_length=255)),
-                ('descricao', models.TextField(blank=True)),
+
+            ],
+        ),
+
+        migrations.CreateModel(
+            name='Task',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('username', models.EmailField(max_length=254, unique=True)),
+                ('descricao', models.TextField()),
             ],
         ),
     ]
