@@ -64,11 +64,32 @@ function editItem(index) {
 
 function logout() {
 
-    
+
     localStorage.removeItem('userSession');
     sessionStorage.removeItem('userSession');
-    window.location.href = 'https://loginseidel.netlify.app/';
+    window.location.href = 'http://127.0.0.1:5500/login.html';
 }
 
 button.addEventListener("click", addTarefa) // Botão criar tarefa
 logoutButton.addEventListener("click", logout); // Botão logout
+
+// Adicionar tarefa
+document.getElementById('add-task').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const description = document.getElementById('taskbar').value;
+
+    const response = await fetch(`${API_URL}/tasks/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({description })
+    });
+
+    if (response.ok) {
+        document.getElementById('add-task').reset();
+        loadTasks();
+    } else {
+        alert('Erro ao adicionar tarefa.');
+    }
+});

@@ -1,40 +1,67 @@
-// Adiciona um event listener ao formulário para lidar com a submissão
-document.getElementById('registerForm').addEventListener('submit', async function(event) {
-    // Previne o comportamento padrão do formulário (recarregar a página)
-    event.preventDefault();
+const API_URL = 'http://localhost:8000/api'
 
-    // Coleta os valores dos campos do formulário
-    const email = document.getElementById('email').value;
-    const nome = document.getElementById('nome').value;
-    const sobrenome = document.getElementById('sobrenome').value;
-    const password = document.getElementById('password').value;
+document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('registerForm');
+    const loginForm = document.getElementById('loginForm');
 
-    
-    try {
-        // Faz uma requisição HTTP POST para o endpoint de registro no backend
-        const response = await fetch('http://localhost:8000/api/register/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                nome: nome,
-                sobrenome: sobrenome,
-                password: password
-            })
+    if (registerForm) {
+        registerForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const nome = document.getElementById('nome').value;
+            const sobrenome = document.getElementById('sobrenome').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch(`${API_URL}/register/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        nome: nome,
+                        sobrenome: sobrenome,
+                        password: password
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Registro bem sucedido:', data);
+                } else {
+                    console.error('Registro falhou:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Ocorreu um erro:', error);
+            }
         });
+    }
 
-        // Verifica se a requisição foi bem-sucedida
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Registration successful:', data);
-            // Tratar registro bem-sucedido (por exemplo, redirecionar para a página de login)
-        } else {
-            console.error('Registration failed:', response.statusText);
-            // Tratar falha no registro (por exemplo, exibir mensagem de erro)
-        }
-    } catch (error) {
-        console.error('An error occurred:', error);
+    if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch(`${API_URL}/login/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({email,password})
+            });
+
+            
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Login bem succedido:', data);
+                window.location.href = 'http://127.0.0.1:5500/toDoList.html';
+            } else {
+                console.error('Login falhou:', response.statusText);
+            }
+        });
     }
 });
+

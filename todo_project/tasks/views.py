@@ -30,4 +30,20 @@ class UserRegister(APIView):
             'message': 'Usuário registrado com sucesso'}, 
             status=status.HTTP_201_CREATED,
             )
+    
+class UserAuth(APIView):
+    def post(self, request):
+        email = request.data['email']
+        password = request.data['password']
+
+        if Users.objects.filter(email=email).exists() and Users.objects.filter(password=password).exists():
+            return Response({
+                'message': 'login realizado com sucesso'},
+                status=status.HTTP_201_CREATED,
+                )
+        else:
+            return Response({
+                'error': 'login ou senha incorreto'},
+                status=status.HTTP_400_BAD_REQUEST,
+                )
 
